@@ -212,4 +212,6 @@
     <!-- Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
 
+    <!-- Make things go fast -->
+    <bool name="config_ui_enableFadingMarquee">false</bool>
 </resources>
