@@ -56,7 +56,7 @@
 /dev/pvr_sync             0666   system     system
 
 # Bluetooth
-/dev/ttyO1                0660   bluetooth  net_bt_stack
+/dev/ttyO1                0660   bluetooth  bluetooth
 
 # GPS
 /dev/ttyO0                0660   system     system
