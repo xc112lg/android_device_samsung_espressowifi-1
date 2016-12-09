@@ -34,6 +34,9 @@ on fs
     # increase read-ahead value to 256 kb
     write /sys/block/mmcblk0/queue/read_ahead_kb 256
 
+    # Wifi firmware reload path
+    chown wifi wifi /sys/module/bcmdhd/parameters/firmware_path
+
 on post-fs-data
     # dmrpc
     mkdir /data/smc 0770 drmrpc drmrpc
