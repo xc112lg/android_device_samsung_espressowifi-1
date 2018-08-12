@@ -149,6 +149,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/rootdir/loggy.sh:root/loggy.sh
 
+# GPS shim
+PRODUCT_PACKAGES += \
+    libshim
+
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \

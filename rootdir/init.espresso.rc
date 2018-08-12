@@ -17,6 +17,8 @@ on init
     write /sys/kernel/mm/ksm/sleep_millisecs 500
     write /sys/kernel/mm/ksm/run 1
 
+    export LD_SHIM_LIBS "/system/bin/gpsd|libshim.so"
+
 on fs
     mkdir /efs 0775 radio system
 
