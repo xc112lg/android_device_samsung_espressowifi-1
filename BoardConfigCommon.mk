@@ -45,6 +45,9 @@ $(TARGET_KERNEL_SOURCE)/drivers/staging/android/ion/ion_page_pool.c)))
 export BOARD_USE_TI_LIBION := false
 endif
 
+USE_AMAZON_DUCATI := $(if $(shell grep ^CONFIG_USE_AMAZON_DUCATI=y$$ \
+$(TARGET_KERNEL_SOURCE)/arch/arm/configs/$(TARGET_KERNEL_CONFIG)),true,)
+
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
