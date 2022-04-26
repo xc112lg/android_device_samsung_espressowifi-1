@@ -75,6 +75,8 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/espressowifi/bluet
 BOARD_SEPOLICY_DIRS += \
     device/samsung/espressowifi/sepolicy
 
+DEVICE_MANIFEST_FILE += device/samsung/espresso/manifest.xml
+
 # Recovery
 RECOVERY_FSTAB_VERSION := 2
 TARGET_RECOVERY_FSTAB := device/samsung/espressowifi/rootdir/fstab.espresso
