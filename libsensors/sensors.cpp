@@ -166,7 +166,7 @@ struct sensors_module_t HAL_MODULE_INFO_SYM = {
 };
 
 struct sensors_poll_context_t {
-    struct sensors_poll_device_t device; // must be first
+    sensors_poll_device_1_t device; // must be first
 
     sensors_poll_context_t();
     ~sensors_poll_context_t();
@@ -464,6 +464,15 @@ static int poll__poll(struct sensors_poll_device_t *dev,
     return ctx->pollEvents(data, count);
 }
 
+static int poll__batch(struct sensors_poll_device_1 *dev,
+        int handle,__attribute__((unused)) int flags, int64_t ns,__attribute__((unused)) int64_t timeout) {
+    sensors_poll_context_t *ctx = (sensors_poll_context_t *)dev;
+    return ctx->setDelay(handle, ns);
+}
+
+static inline int poll__flush(__attribute__((unused)) struct sensors_poll_device_1 *dev,
+        __attribute__((unused)) int handle) { return -EINVAL; }
+
 static int open_sensors(const struct hw_module_t* module,
                         const char* id __unused,
                         struct hw_device_t** device)
@@ -472,15 +481,17 @@ static int open_sensors(const struct hw_module_t* module,
     int status = -EINVAL;
     sensors_poll_context_t *dev = new sensors_poll_context_t();
 
-    memset(&dev->device, 0, sizeof(sensors_poll_device_t));
+    memset(&dev->device, 0, sizeof(sensors_poll_device_1));
 
     dev->device.common.tag      = HARDWARE_DEVICE_TAG;
-    dev->device.common.version  = SENSORS_DEVICE_API_VERSION_1_0;
+    dev->device.common.version  = SENSORS_DEVICE_API_VERSION_1_3;
     dev->device.common.module   = const_cast<hw_module_t*>(module);
     dev->device.common.close    = poll__close;
     dev->device.activate        = poll__activate;
     dev->device.setDelay        = poll__setDelay;
     dev->device.poll            = poll__poll;
+    dev->device.batch           = poll__batch;
+    dev->device.flush           = poll__flush;
 
     *device = &dev->device.common;
     status = 0;
