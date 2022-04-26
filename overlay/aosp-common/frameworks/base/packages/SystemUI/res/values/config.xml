@@ -24,4 +24,6 @@
     <!-- Whether to use cheap, less good looking shadows for recents -->
     <bool name="config_recents_fake_shadows">true</bool>
 
+    <!-- Show camera affordance on Keyguard -->
+    <bool name="config_keyguardShowCameraAffordance">false</bool>
 </resources>
