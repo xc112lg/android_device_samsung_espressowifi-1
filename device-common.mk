@@ -30,6 +30,9 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_AAPT_CONFIG := large
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
+# Enable low RAM comfig as we only have 1 GB RAM
+PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
+
 # Init files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.espresso.rc:root/init.espresso.rc \
