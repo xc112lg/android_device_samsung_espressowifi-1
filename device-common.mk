@@ -53,6 +53,7 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl \
     libgpsd-compat \
     libstlport
 
@@ -61,6 +62,9 @@ PRODUCT_COPY_FILES += \
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
+    wificond \
+    wifilogd \
     libwpa_client \
     hostapd \
     wpa_supplicant \
@@ -69,9 +73,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
 
+#Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl \
+    libbt-vendor
+
 # Bluetooth
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
+
+# Media
+PRODUCT_PACKAGES += \
+    android.hardware.media@1.0 \
+    android.hardware.media.omx@1.0 \
+    android.hardware.media.omx@1.0-utils \
 
 # Media profiles
 PRODUCT_COPY_FILES += \
@@ -90,15 +105,22 @@ PRODUCT_COPY_FILES += \
 
 # Packages
 PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
     audio.a2dp.default \
     audio.primary.piranha \
     audio.r_submix.default \
     audio.usb.default \
-    camera.omap4 \
+    android.hardware.light@2.0-impl \
     lights.omap4 \
+    android.hardware.sensors@1.0-impl \
     sensors.omap4 \
     geomagneticd \
     orientationd
+
+# USB HAL service
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service
 
 # F2FS filesystem
 PRODUCT_PACKAGES += \
@@ -114,6 +136,10 @@ PRODUCT_PACKAGES += \
 # Samsung dock keyboard
 PRODUCT_PACKAGES += \
     dock_kbd_attach
+
+# Vibrator HAL
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
