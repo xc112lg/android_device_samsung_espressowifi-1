@@ -60,3 +60,6 @@
 
 # GPS
 /dev/ttyO0                0660   system     system
+
+# Sensors
+/dev/input/*              0660   root       input
