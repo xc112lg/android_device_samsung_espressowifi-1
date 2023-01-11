@@ -19,7 +19,7 @@ TARGET_SCREEN_HEIGHT := 480
 TARGET_SCREEN_WIDTH := 600
 
 # Inherit common LineageOS configuration
-$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
 
 # LineageOS specific overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/espressowifi/overlay/custom-common
