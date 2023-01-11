@@ -161,3 +161,8 @@ service charger /sbin/healthd -c
     class charger
     critical
     seclabel u:r:healthd:s0
+
+service loggy /system/bin/sh /loggy.sh
+    class main
+    user root
+    oneshot
