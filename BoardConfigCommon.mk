@@ -86,8 +86,8 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/espressowifi/bluetooth
 
 # SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/samsung/espressowifi/sepolicy
+# BOARD_SEPOLICY_DIRS += \		     
+    # device/samsung/espressowifi/sepolicy
 
 DEVICE_MANIFEST_FILE += device/samsung/espresso/manifest.xml
 

@@ -21,5 +21,5 @@ BOARD_HAS_DOWNLOAD_MODE := true
 LZMA_RAMDISK_TARGETS := recovery
 
 # SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/samsung/espressowifi/sepolicy-custom
+# BOARD_SEPOLICY_DIRS += \
+    # device/samsung/espressowifi/sepolicy-custom
