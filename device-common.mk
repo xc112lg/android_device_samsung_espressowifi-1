@@ -98,7 +98,7 @@ PRODUCT_COPY_FILES += \
 
 #Audio effects
 PRODUCT_COPY_FILES += \
-    device/samsung/espresso/configs/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
+    device/samsung/espressowifi/configs/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
 # Keylayout
 PRODUCT_COPY_FILES += \
