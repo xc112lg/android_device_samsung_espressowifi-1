@@ -39,6 +39,7 @@ BOARD_NAND_SPARE_SIZE := 128
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=espresso
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 ifneq (,$(strip $(wildcard \
 $(TARGET_KERNEL_SOURCE)/drivers/gpu/ion/ion_page_pool.c \
