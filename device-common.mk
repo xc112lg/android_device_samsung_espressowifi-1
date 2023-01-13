@@ -123,7 +123,7 @@ PRODUCT_PACKAGES += \
 
 # USB HAL service
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service
+    android.hardware.usb@1.0-service.basic
 
 # F2FS filesystem
 PRODUCT_PACKAGES += \
