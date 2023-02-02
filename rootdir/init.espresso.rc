@@ -157,7 +157,7 @@ on property:ro.carrier=wifi-only
 
 # LPM
 on property:ro.bootmode=charger
-    mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/FACTORYFS /system wait ro
+    mount ext4 /dev/block/platform/omap_hsmmc.1/by-name/FACTORYFS /system wait ro
 
 on property:ro.bootmode=charger
     write /sys/class/android_usb/android0/enable 0
@@ -171,11 +171,14 @@ on property:ro.bootmode=charger
 
 on property:ro.bootmode=charger
     class_start charger
+    
+on property:ro.bootmode=charger
+    start pvrsrvinit
 
-service charger /sbin/healthd -c
+service charger /charger
     class charger
     critical
-    seclabel u:r:healthd:s0
+    seclabel u:r:charger:s0
 
 service loggy /system/bin/sh /loggy.sh
     class main
