@@ -32,6 +32,5 @@ PRODUCT_NAME := lineage_espressowifi
 
 # Device & filesystem
 PRODUCT_PACKAGES += \
-    Launcher3Go \
     Terminal \
     nano
