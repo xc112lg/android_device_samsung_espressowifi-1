@@ -15,7 +15,7 @@
 #
 
 # Use 44.1 kHz UI sounds
-$(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackage13.mk)
+$(call inherit-product, frameworks/base/data/sounds/AudioPackage13.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/samsung/espressowifi/device.mk)

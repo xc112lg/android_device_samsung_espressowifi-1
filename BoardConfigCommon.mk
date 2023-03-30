@@ -34,12 +34,14 @@ TARGET_USES_64_BIT_BINDER := true
 TARGET_KERNEL_SOURCE := kernel/ti/omap4
 TARGET_KERNEL_CONFIG := espresso_defconfig
 BOARD_KERNEL_IMAGE_NAME := zImage
-BOARD_NAND_PAGE_SIZE := 4096
-BOARD_NAND_SPARE_SIZE := 128
+#BOARD_NAND_PAGE_SIZE := 4096
+#BOARD_NAND_SPARE_SIZE := 128
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=espresso
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
+TARGET_USES_LEGACY_ADB_INTERFACE := true
 
 ifneq (,$(strip $(wildcard \
 $(TARGET_KERNEL_SOURCE)/drivers/gpu/ion/ion_page_pool.c \

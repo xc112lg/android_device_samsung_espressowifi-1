@@ -15,5 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_espressowifi.mk \
-    $(LOCAL_DIR)/lineage.mk
+    $(LOCAL_DIR)/lineage_espressowifi.mk

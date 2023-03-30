@@ -4,7 +4,7 @@
 
 export PATH=/system/bin
 
-DEVICE=/sys/board/type
+DEVICE=espresso
 
 if [ -f "$DEVICE" ]
 then
